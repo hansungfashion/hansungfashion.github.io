@@ -15,12 +15,12 @@
 body {
   font-family: Arial, "Noto Sans KR", sans-serif;
   background: #faf9f6;
-  color: #333;
+  color: #292929;
 }
 
 header {
   background: #fff;
-  padding: 22px 7%;
+  padding: 20px 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,37 +31,43 @@ header {
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #333;
 }
 
 nav {
   display: flex;
-  gap: 25px;
+  gap: 28px;
 }
 
 nav a {
   text-decoration: none;
-  color: #444;
-  font-size: 14px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #b47c65;
 }
 
 .cart-button {
   border: none;
-  background: #e9dcd4;
-  padding: 11px 18px;
+  background: #222;
+  color: white;
+  padding: 12px 20px;
   border-radius: 25px;
   cursor: pointer;
   font-size: 13px;
 }
 
 .hero {
-  min-height: 430px;
+  min-height: 500px;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.40), rgba(0,0,0,.05)),
-    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1800") center/cover;
+    linear-gradient(90deg, rgba(0,0,0,.38), rgba(0,0,0,.03)),
+    url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1800")
+    center 35% / cover;
   display: flex;
   align-items: center;
   padding: 8%;
@@ -69,38 +75,44 @@ nav a {
 }
 
 .hero-content h1 {
-  font-size: 48px;
+  font-size: 54px;
   letter-spacing: 3px;
-  margin-bottom: 15px;
+  line-height: 1.15;
+  margin-bottom: 18px;
 }
 
 .hero-content p {
   font-size: 16px;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .hero-content button {
   background: white;
-  color: #333;
+  color: #222;
   border: none;
-  padding: 13px 28px;
+  padding: 15px 32px;
   cursor: pointer;
   font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-content button:hover {
+  background: #e9dcd4;
 }
 
 .section {
-  padding: 65px 7%;
+  padding: 75px 7%;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 38px;
 }
 
 .section-title h2 {
-  font-size: 29px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
 }
 
 .section-title p {
@@ -112,30 +124,32 @@ nav a {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 35px;
+  margin-bottom: 38px;
   flex-wrap: wrap;
 }
 
 .filters button {
-  padding: 10px 23px;
+  padding: 11px 25px;
   border: 1px solid #ddd;
   background: white;
   border-radius: 25px;
   cursor: pointer;
   transition: .2s;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .filters button.active,
 .filters button:hover {
-  background: #333;
+  background: #222;
   color: white;
-  border-color: #333;
+  border-color: #222;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px 18px;
+  gap: 30px 18px;
 }
 
 .product-card {
@@ -143,86 +157,93 @@ nav a {
   overflow: hidden;
 }
 
+.product-image {
+  overflow: hidden;
+  background: #eee;
+}
+
 .product-card img {
   width: 100%;
-  height: 300px;
+  height: 310px;
   object-fit: cover;
   display: block;
   transition: transform .4s;
 }
 
 .product-card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .product-info {
-  padding: 17px 12px;
+  padding: 18px 13px;
 }
 
 .product-category {
-  font-size: 11px;
-  color: #aaa;
-  margin-bottom: 8px;
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 9px;
 }
 
 .product-name {
-  font-size: 15px;
+  font-size: 14px;
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .price {
   font-weight: bold;
   font-size: 15px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 .add-cart {
   width: 100%;
-  padding: 11px;
-  background: #e9dcd4;
+  padding: 12px;
+  background: #222;
+  color: white;
   border: none;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: .2s;
 }
 
 .add-cart:hover {
-  background: #d7c2b6;
+  background: #a77d68;
 }
 
 .about {
-  background: #f0e9e4;
+  background: #eee8e2;
   text-align: center;
-  padding: 65px 15%;
+  padding: 75px 15%;
 }
 
 .about h2 {
-  font-size: 26px;
-  margin-bottom: 18px;
+  font-size: 27px;
+  margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
 .about p {
   color: #666;
-  line-height: 1.9;
+  line-height: 2;
   font-size: 14px;
 }
 
 footer {
-  background: #333;
+  background: #222;
   color: #eee;
   text-align: center;
-  padding: 30px 15px;
+  padding: 35px 15px;
   font-size: 12px;
   line-height: 2;
 }
 
-/* CART */
-
 .cart-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.35);
+  background: rgba(0,0,0,.4);
   z-index: 20;
   display: none;
 }
@@ -260,7 +281,7 @@ footer {
 .close-cart {
   background: none;
   border: none;
-  font-size: 25px;
+  font-size: 27px;
   cursor: pointer;
 }
 
@@ -282,7 +303,7 @@ footer {
 }
 
 .cart-details h4 {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 8px;
 }
 
@@ -298,8 +319,8 @@ footer {
 }
 
 .quantity button {
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
   border: 1px solid #ddd;
   background: white;
   cursor: pointer;
@@ -310,7 +331,7 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
   margin-top: 8px;
 }
 
@@ -330,10 +351,11 @@ footer {
 .checkout {
   width: 100%;
   padding: 15px;
-  background: #333;
+  background: #222;
   color: white;
   border: none;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
 .empty-cart {
@@ -349,7 +371,7 @@ footer {
   }
 
   .product-card img {
-    height: 260px;
+    height: 280px;
   }
 
   nav {
@@ -358,8 +380,20 @@ footer {
 }
 
 @media(max-width: 500px) {
+  header {
+    padding: 17px 5%;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .section {
@@ -367,11 +401,19 @@ footer {
   }
 
   .product-grid {
-    gap: 15px 10px;
+    gap: 18px 10px;
   }
 
   .product-card img {
     height: 210px;
+  }
+
+  .product-name {
+    font-size: 12px;
+  }
+
+  .about {
+    padding: 50px 8%;
   }
 }
 </style>
@@ -380,6 +422,7 @@ footer {
 <body>
 
 <header>
+
   <div class="logo">HANSUNG FASHION</div>
 
   <nav>
@@ -391,23 +434,28 @@ footer {
   <button class="cart-button" onclick="openCart()">
     BAG (<span id="cart-count">2</span>)
   </button>
+
 </header>
 
 <section class="hero" id="home">
+
   <div class="hero-content">
     <h1>NEW SEASON<br>NEW STYLE</h1>
+
     <p>Discover your own style with Hansung Fashion.</p>
+
     <button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
       SHOP NOW
     </button>
   </div>
+
 </section>
 
 <section class="section" id="collection">
 
   <div class="section-title">
     <h2>NEW COLLECTION</h2>
-    <p>Discover the latest fashion collection</p>
+    <p>Discover the latest Korean street fashion</p>
   </div>
 
   <div class="filters">
@@ -422,14 +470,17 @@ footer {
 </section>
 
 <section class="about" id="about">
+
   <h2>ABOUT HANSUNG FASHION</h2>
+
   <p>
-    HANSUNG FASHION is a modern fashion store.
-    We offer stylish clothing, shoes and bags
-    for everyday life.
-    Find your own style and enjoy every moment
+    HANSUNG FASHION is a modern Korean fashion store.
+    We offer trendy clothing, comfortable shoes and
+    stylish bags for everyday life.
+    Discover your own style and enjoy every moment
     with our new collection.
   </p>
+
 </section>
 
 <footer>
@@ -440,7 +491,11 @@ footer {
 
 <!-- SHOPPING CART -->
 
-<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div
+  class="cart-overlay"
+  id="cart-overlay"
+  onclick="closeCart()">
+</div>
 
 <div class="cart-panel" id="cart-panel">
 
@@ -452,6 +507,7 @@ footer {
   <div id="cart-items"></div>
 
   <div class="cart-footer">
+
     <div class="total-row">
       <span>TOTAL</span>
       <span id="cart-total">₩0</span>
@@ -460,49 +516,52 @@ footer {
     <button class="checkout" onclick="checkout()">
       CHECKOUT
     </button>
+
   </div>
 
 </div>
 
 <script>
 
+// PRODUCT DATA
+
 const products = [
 
   {
     id: "dress",
-    name: "Elegant Summer Dress",
+    name: "Casual Mini Dress",
     category: "clothing",
     price: 59000,
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=700"
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=700"
   },
 
   {
     id: "shirt",
-    name: "Classic White Shirt",
+    name: "Oversized Casual Shirt",
     category: "clothing",
     price: 39000,
-    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=700"
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700"
   },
 
   {
     id: "jacket",
-    name: "Casual Beige Jacket",
+    name: "Street Denim Jacket",
     category: "clothing",
     price: 79000,
-    image: "https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=700"
+    image: "https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=700"
   },
 
   {
     id: "pants",
-    name: "Wide Leg Trousers",
+    name: "Wide Leg Denim Pants",
     category: "clothing",
     price: 49000,
-    image: "https://images.unsplash.com/photo-1506629905607-d9a8e1b0c9d3?w=700"
+    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=700"
   },
 
   {
     id: "sneakers",
-    name: "Classic White Sneakers",
+    name: "Retro Street Sneakers",
     category: "shoes",
     price: 69000,
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700"
@@ -510,7 +569,7 @@ const products = [
 
   {
     id: "heels",
-    name: "Minimal Leather Heels",
+    name: "Sporty Casual Shoes",
     category: "shoes",
     price: 85000,
     image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=700"
@@ -518,7 +577,7 @@ const products = [
 
   {
     id: "boots",
-    name: "Classic Ankle Boots",
+    name: "Urban Ankle Boots",
     category: "shoes",
     price: 99000,
     image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=700"
@@ -526,7 +585,7 @@ const products = [
 
   {
     id: "flats",
-    name: "Everyday Ballet Flats",
+    name: "Daily Casual Flats",
     category: "shoes",
     price: 55000,
     image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=700"
@@ -534,7 +593,7 @@ const products = [
 
   {
     id: "tote",
-    name: "Everyday Canvas Tote",
+    name: "Daily Canvas Tote",
     category: "bags",
     price: 35000,
     image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=700"
@@ -542,7 +601,7 @@ const products = [
 
   {
     id: "shoulder",
-    name: "Classic Shoulder Bag",
+    name: "Trendy Shoulder Bag",
     category: "bags",
     price: 89000,
     image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=700"
@@ -550,7 +609,7 @@ const products = [
 
   {
     id: "handbag",
-    name: "Elegant Leather Handbag",
+    name: "Modern Mini Handbag",
     category: "bags",
     price: 109000,
     image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=700"
@@ -558,7 +617,7 @@ const products = [
 
   {
     id: "crossbody",
-    name: "Mini Crossbody Bag",
+    name: "Everyday Crossbody Bag",
     category: "bags",
     price: 69000,
     image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=700"
@@ -566,17 +625,21 @@ const products = [
 
 ];
 
-// Initial shopping cart
-// 1 dress + 1 pair of sneakers
+// INITIAL CART
+// One dress and one pair of sneakers
 
 let cart = {
   dress: 1,
   sneakers: 1
 };
 
+// FORMAT PRICE
+
 function formatPrice(price) {
   return "₩" + price.toLocaleString("ko-KR");
 }
+
+// DISPLAY PRODUCTS
 
 function renderProducts(category = "all") {
 
@@ -584,15 +647,19 @@ function renderProducts(category = "all") {
 
   const filtered = category === "all"
     ? products
-    : products.filter(p => p.category === category);
+    : products.filter(product => product.category === category);
 
   grid.innerHTML = filtered.map(product => `
 
     <div class="product-card">
 
-      <img src="${product.image}"
-           alt="${product.name}"
-           loading="lazy">
+      <div class="product-image">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+        >
+      </div>
 
       <div class="product-info">
 
@@ -608,17 +675,21 @@ function renderProducts(category = "all") {
           ${formatPrice(product.price)}
         </div>
 
-        <button class="add-cart"
+        <button
+          class="add-cart"
           onclick="addToCart('${product.id}')">
           ADD TO BAG
         </button>
 
       </div>
+
     </div>
 
   `).join("");
 
 }
+
+// FILTER PRODUCTS
 
 function filterProducts(category, button) {
 
@@ -630,6 +701,8 @@ function filterProducts(category, button) {
   renderProducts(category);
 }
 
+// ADD TO CART
+
 function addToCart(id) {
 
   cart[id] = (cart[id] || 0) + 1;
@@ -638,6 +711,8 @@ function addToCart(id) {
 
   openCart();
 }
+
+// CHANGE QUANTITY
 
 function updateQuantity(id, change) {
 
@@ -650,6 +725,8 @@ function updateQuantity(id, change) {
   updateCart();
 }
 
+// REMOVE PRODUCT
+
 function removeFromCart(id) {
 
   delete cart[id];
@@ -657,13 +734,14 @@ function removeFromCart(id) {
   updateCart();
 }
 
+// UPDATE CART
+
 function updateCart() {
 
   const cartItems = document.getElementById("cart-items");
 
   let total = 0;
   let count = 0;
-
   let html = "";
 
   Object.keys(cart).forEach(id => {
@@ -701,7 +779,8 @@ function updateCart() {
 
           </div>
 
-          <button class="remove-item"
+          <button
+            class="remove-item"
             onclick="removeFromCart('${id}')">
             Remove
           </button>
@@ -727,6 +806,8 @@ function updateCart() {
 
 }
 
+// OPEN CART
+
 function openCart() {
 
   document.getElementById("cart-panel")
@@ -737,6 +818,8 @@ function openCart() {
 
 }
 
+// CLOSE CART
+
 function closeCart() {
 
   document.getElementById("cart-panel")
@@ -746,6 +829,8 @@ function closeCart() {
     .classList.remove("show");
 
 }
+
+// CHECKOUT
 
 function checkout() {
 
@@ -758,7 +843,7 @@ function checkout() {
 
 }
 
-// Initial rendering
+// INITIALIZE WEBSITE
 
 renderProducts();
 updateCart();
