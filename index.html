@@ -6,62 +6,374 @@
 <title>HANSUNG FASHION</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#fffaf8;color:#514b49}
-header{background:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-bottom:1px solid #eee5e1}
-.logo{font-size:24px;font-weight:bold;letter-spacing:2px;color:#b98285}
-nav{display:flex;gap:24px}
-nav a{text-decoration:none;color:#625957;font-size:14px}
-button{cursor:pointer;font-family:inherit}
-.cart-button{border:0;background:#f4e5e2;color:#805e5e;padding:11px 18px;border-radius:25px}
-.hero{width:88%;margin:30px auto;background:#f1e7e2;border-radius:18px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;min-height:340px}
-.hero-copy{padding:55px 9%;display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-size:42px;color:#896568;line-height:1.2;margin-bottom:18px}
-.hero p{line-height:1.9;color:#776a67}
-.hero-tag{margin-top:22px;background:white;color:#a77779;padding:10px 18px;border-radius:22px;width:max-content;font-size:12px;letter-spacing:1px}
-.hero img{width:100%;height:100%;min-height:340px;object-fit:cover}
-.section{width:88%;margin:48px auto}
-.section-title{font-size:25px;color:#705c58;margin-bottom:22px}
-.categories{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
-.categories button{border:0;background:#f4e9e6;color:#765e5b;padding:10px 20px;border-radius:22px}
-.categories button.active{background:#bd898b;color:white}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
-.product{background:white;border-radius:13px;padding:12px;box-shadow:0 4px 15px #64463c0d;transition:.2s}
-.product:hover{transform:translateY(-4px)}
-.product-image{width:100%;height:240px;object-fit:cover;border-radius:9px;background:#f1eae7;display:block}
-.product h3{font-size:15px;margin:14px 0 8px}
-.price{color:#b77d80;font-weight:bold;margin-bottom:12px}
-.product-actions{display:flex;gap:7px}
-.product-actions button{flex:1;border:0;background:#f5e9e6;color:#765e5b;padding:10px 4px;border-radius:8px;font-size:12px}
-.product-actions button:hover{background:#e9ceca}
-.cart-section{background:white;padding:25px;border-radius:16px;box-shadow:0 4px 15px #64463c0d}
-.cart-item{display:flex;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid #f1e9e6}
-.cart-image{width:72px;height:82px;object-fit:cover;border-radius:9px;background:#f4e9e6}
-.cart-info{flex:1}
-.cart-info h3{font-size:14px;margin-bottom:8px}
-.cart-info p{color:#b77d80;font-weight:bold;font-size:14px}
-.quantity{display:flex;align-items:center;gap:9px}
-.quantity button{width:26px;height:26px;border:0;background:#f5e9e6;border-radius:50%}
-.remove{border:0;background:none;color:#a58d89;font-size:12px}
-.cart-total{text-align:right;font-size:18px;font-weight:bold;margin-top:20px}
-.checkout{display:block;margin:18px 0 0 auto;border:0;background:#bd898b;color:white;padding:12px 25px;border-radius:25px}
-.ab-area{width:88%;margin:40px auto;padding:22px;text-align:center;background:white;border:1px solid #f0e3df;border-radius:15px}
-.ab-area p{margin-bottom:12px;font-size:14px}
-.ab-controls{display:flex;justify-content:center;gap:12px}
-.ab-controls button{border:0;background:#f4e9e6;color:#765e5b;padding:10px 22px;border-radius:22px}
-.ab-controls button.active{background:#bd898b;color:white}
-footer{text-align:center;padding:32px;background:#f8eeeb;color:#907c78;font-size:13px}
-.overlay{position:fixed;inset:0;background:#32282880;display:flex;justify-content:center;align-items:center;z-index:100;padding:15px}
-.popup{width:400px;max-width:100%;background:#fffaf8;border-radius:20px;padding:36px 28px;text-align:center;position:relative;box-shadow:0 10px 40px #0002}
-.popup-icon{font-size:38px;margin-bottom:15px}
-.popup h2{color:#ad777b;font-size:25px;margin-bottom:15px}
-.popup p{color:#766967;font-size:14px;line-height:1.9;margin-bottom:18px}
-.highlight{color:#bd777b;font-weight:bold}
-.popup-button{width:100%;background:#bd898b;color:white;border:0;padding:14px;border-radius:25px;font-size:15px}
-.close{position:absolute;right:17px;top:13px;border:0;background:none;font-size:24px;color:#9b8985}
-.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#765e5b;color:white;padding:12px 22px;border-radius:25px;z-index:200;display:none;font-size:14px}
-@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.hero h1{font-size:30px}.product-image{height:210px}}
-@media(max-width:520px){header{padding:18px 5%}nav{width:100%;order:3}.hero,.section,.ab-area{width:92%}.hero{grid-template-columns:1fr}.hero-copy{padding:35px 8%}.hero img{height:230px;min-height:230px}.product-image{height:150px}.cart-section{padding:12px}.cart-image{width:55px;height:65px}.quantity{gap:5px}}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #faf9f6;
+  color: #333;
+}
+
+header {
+  background: #fff;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.cart-button {
+  border: none;
+  background: #e9dcd4;
+  padding: 11px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.hero {
+  min-height: 430px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.40), rgba(0,0,0,.05)),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1800") center/cover;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.hero-content button {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.section {
+  padding: 65px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 29px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #999;
+  font-size: 13px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 10px 23px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 18px;
+}
+
+.product-card {
+  background: white;
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+}
+
+.product-card:hover img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  padding: 17px 12px;
+}
+
+.product-category {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.product-name {
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.add-cart {
+  width: 100%;
+  padding: 11px;
+  background: #e9dcd4;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.add-cart:hover {
+  background: #d7c2b6;
+}
+
+.about {
+  background: #f0e9e4;
+  text-align: center;
+  padding: 65px 15%;
+}
+
+.about h2 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+}
+
+.about p {
+  color: #666;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+footer {
+  background: #333;
+  color: #eee;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 12px;
+  line-height: 2;
+}
+
+/* CART */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 20;
+  display: none;
+}
+
+.cart-overlay.show {
+  display: block;
+}
+
+.cart-panel {
+  position: fixed;
+  right: -430px;
+  top: 0;
+  width: 400px;
+  max-width: 90%;
+  height: 100vh;
+  background: white;
+  z-index: 21;
+  padding: 25px;
+  transition: right .3s;
+  overflow-y: auto;
+}
+
+.cart-panel.show {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 85px;
+  height: 105px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.cart-details p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity button {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.remove-item {
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.cart-footer {
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.checkout {
+  width: 100%;
+  padding: 15px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #999;
+  padding: 50px 0;
+  font-size: 14px;
+}
+
+@media(max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card img {
+    height: 260px;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media(max-width: 500px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 45px 5%;
+  }
+
+  .product-grid {
+    gap: 15px 10px;
+  }
+
+  .product-card img {
+    height: 210px;
+  }
+}
 </style>
 </head>
 
@@ -69,291 +381,388 @@ footer{text-align:center;padding:32px;background:#f8eeeb;color:#907c78;font-size
 
 <header>
   <div class="logo">HANSUNG FASHION</div>
+
   <nav>
-    <a href="#">HOME</a>
-    <a href="#products">SHOP</a>
-    <a href="#cart">CART</a>
+    <a href="#home">HOME</a>
+    <a href="#collection">COLLECTION</a>
     <a href="#about">ABOUT</a>
   </nav>
-  <button class="cart-button" onclick="goToCart()">장바구니 (<span id="cartCount">2</span>)</button>
+
+  <button class="cart-button" onclick="openCart()">
+    BAG (<span id="cart-count">2</span>)
+  </button>
 </header>
 
-<section class="hero">
-  <div class="hero-copy">
-    <h1>Find Your Daily Style</h1>
-    <p>매일 입고 싶은 특별한 스타일<br>HANSUNG FASHION에서 나만의 패션을 만나보세요.</p>
-    <span class="hero-tag">NEW COLLECTION 2026</span>
-  </div>
-  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Fashion collection">
-</section>
-
-<section class="section" id="products">
-  <h2 class="section-title">NEW COLLECTION</h2>
-  <div class="categories">
-    <button class="active" onclick="filterProducts('all',this)">전체</button>
-    <button onclick="filterProducts('clothes',this)">의류</button>
-    <button onclick="filterProducts('shoes',this)">신발</button>
-    <button onclick="filterProducts('bags',this)">가방</button>
-  </div>
-
-  <div class="products">
-
-    <article class="product" data-category="clothes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=85" alt="Floral dress">
-      <h3>플라워 원피스</h3><div class="price">45,000원</div>
-      <div class="product-actions"><button onclick="addCart('dress')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="shoes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=85" alt="Sneakers">
-      <h3>데일리 스니커즈</h3><div class="price">59,000원</div>
-      <div class="product-actions"><button onclick="addCart('sneakers')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="bags">
-      <img class="product-image" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=85" alt="Shoulder bag">
-      <h3>미니 숄더백</h3><div class="price">39,000원</div>
-      <div class="product-actions"><button onclick="addCart('bag')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="clothes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=85" alt="Fashion jacket">
-      <h3>베이직 자켓</h3><div class="price">65,000원</div>
-      <div class="product-actions"><button onclick="addCart('jacket')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="shoes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=85" alt="Women's shoes">
-      <h3>클래식 로퍼</h3><div class="price">49,000원</div>
-      <div class="product-actions"><button onclick="addCart('loafers')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="bags">
-      <img class="product-image" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=85" alt="Backpack">
-      <h3>데일리 백팩</h3><div class="price">52,000원</div>
-      <div class="product-actions"><button onclick="addCart('backpack')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="clothes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=85" alt="Knitwear">
-      <h3>베이직 니트</h3><div class="price">32,000원</div>
-      <div class="product-actions"><button onclick="addCart('knit')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="shoes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=85" alt="Fashion shoes">
-      <h3>캐주얼 슈즈</h3><div class="price">55,000원</div>
-      <div class="product-actions"><button onclick="addCart('shoes')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="bags">
-      <img class="product-image" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=85" alt="Leather handbag">
-      <h3>스퀘어 토트백</h3><div class="price">48,000원</div>
-      <div class="product-actions"><button onclick="addCart('tote')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="clothes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=85" alt="Denim jeans">
-      <h3>와이드 데님 팬츠</h3><div class="price">42,000원</div>
-      <div class="product-actions"><button onclick="addCart('jeans')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="shoes">
-      <img class="product-image" src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=600&q=85" alt="Casual footwear">
-      <h3>데일리 플랫슈즈</h3><div class="price">43,000원</div>
-      <div class="product-actions"><button onclick="addCart('flats')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
-    <article class="product" data-category="bags">
-      <img class="product-image" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=85" alt="Fashion handbag">
-      <h3>캐주얼 숄더백</h3><div class="price">46,000원</div>
-      <div class="product-actions"><button onclick="addCart('shoulder')">장바구니</button><button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button></div>
-    </article>
-
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>NEW SEASON<br>NEW STYLE</h1>
+    <p>Discover your own style with Hansung Fashion.</p>
+    <button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
+      SHOP NOW
+    </button>
   </div>
 </section>
 
-<section class="section" id="cart">
-  <h2 class="section-title">SHOPPING CART</h2>
-  <div class="cart-section">
-    <div id="cartItems"></div>
-    <div class="cart-total">총 상품 금액: <span id="cartTotal">104,000원</span></div>
-    <button class="checkout" onclick="notify('주문 기능은 테스트용입니다.')">주문하기</button>
+<section class="section" id="collection">
+
+  <div class="section-title">
+    <h2>NEW COLLECTION</h2>
+    <p>Discover the latest fashion collection</p>
   </div>
+
+  <div class="filters">
+    <button class="active" onclick="filterProducts('all',this)">ALL</button>
+    <button onclick="filterProducts('clothing',this)">CLOTHING</button>
+    <button onclick="filterProducts('shoes',this)">SHOES</button>
+    <button onclick="filterProducts('bags',this)">BAGS</button>
+  </div>
+
+  <div class="product-grid" id="product-grid"></div>
+
 </section>
 
-<div class="ab-area">
-  <p><strong>A/B TEST 미리보기</strong></p>
-  <p>팝업 유형을 선택하여 두 가지 프로모션을 비교해 보세요.</p>
-  <div class="ab-controls">
-    <button id="btnA" class="active" onclick="showPopup('A')">A안 보기</button>
-    <button id="btnB" onclick="showPopup('B')">B안 보기</button>
+<section class="about" id="about">
+  <h2>ABOUT HANSUNG FASHION</h2>
+  <p>
+    HANSUNG FASHION is a modern fashion store.
+    We offer stylish clothing, shoes and bags
+    for everyday life.
+    Find your own style and enjoy every moment
+    with our new collection.
+  </p>
+</section>
+
+<footer>
+  <strong>HANSUNG FASHION</strong>
+  <p>Fashion for your everyday life.</p>
+  <p>© 2026 HANSUNG FASHION. All Rights Reserved.</p>
+</footer>
+
+<!-- SHOPPING CART -->
+
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+
+<div class="cart-panel" id="cart-panel">
+
+  <div class="cart-header">
+    <h3>SHOPPING BAG</h3>
+    <button class="close-cart" onclick="closeCart()">×</button>
   </div>
-</div>
 
-<footer id="about">HANSUNG FASHION © 2026. All Rights Reserved.</footer>
+  <div id="cart-items"></div>
 
-<div class="toast" id="toast"></div>
+  <div class="cart-footer">
+    <div class="total-row">
+      <span>TOTAL</span>
+      <span id="cart-total">₩0</span>
+    </div>
 
-<div class="overlay" id="popupOverlay">
-  <div class="popup">
-    <button class="close" onclick="closePopup()">×</button>
-    <div class="popup-icon" id="popupIcon">🎁</div>
-    <h2 id="popupTitle"></h2>
-    <p id="popupDescription"></p>
-    <button class="popup-button" id="popupButton" onclick="popupAction()"></button>
+    <button class="checkout" onclick="checkout()">
+      CHECKOUT
+    </button>
   </div>
+
 </div>
 
 <script>
-const productsData = {
-  dress:{name:'플라워 원피스',price:45000,image:'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=200&q=80'},
-  sneakers:{name:'데일리 스니커즈',price:59000,image:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80'},
-  bag:{name:'미니 숄더백',price:39000,image:'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=200&q=80'},
-  jacket:{name:'베이직 자켓',price:65000,image:'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=200&q=80'},
-  loafers:{name:'클래식 로퍼',price:49000,image:'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=200&q=80'},
-  backpack:{name:'데일리 백팩',price:52000,image:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=200&q=80'},
-  knit:{name:'베이직 니트',price:32000,image:'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=200&q=80'},
-  shoes:{name:'캐주얼 슈즈',price:55000,image:'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=200&q=80'},
-  tote:{name:'스퀘어 토트백',price:48000,image:'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80'},
-  jeans:{name:'와이드 데님 팬츠',price:42000,image:'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=200&q=80'},
-  flats:{name:'데일리 플랫슈즈',price:43000,image:'https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=200&q=80'},
-  shoulder:{name:'캐주얼 숄더백',price:46000,image:'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=200&q=80'}
+
+const products = [
+
+  {
+    id: "dress",
+    name: "Elegant Summer Dress",
+    category: "clothing",
+    price: 59000,
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=700"
+  },
+
+  {
+    id: "shirt",
+    name: "Classic White Shirt",
+    category: "clothing",
+    price: 39000,
+    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=700"
+  },
+
+  {
+    id: "jacket",
+    name: "Casual Beige Jacket",
+    category: "clothing",
+    price: 79000,
+    image: "https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=700"
+  },
+
+  {
+    id: "pants",
+    name: "Wide Leg Trousers",
+    category: "clothing",
+    price: 49000,
+    image: "https://images.unsplash.com/photo-1506629905607-d9a8e1b0c9d3?w=700"
+  },
+
+  {
+    id: "sneakers",
+    name: "Classic White Sneakers",
+    category: "shoes",
+    price: 69000,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700"
+  },
+
+  {
+    id: "heels",
+    name: "Minimal Leather Heels",
+    category: "shoes",
+    price: 85000,
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=700"
+  },
+
+  {
+    id: "boots",
+    name: "Classic Ankle Boots",
+    category: "shoes",
+    price: 99000,
+    image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=700"
+  },
+
+  {
+    id: "flats",
+    name: "Everyday Ballet Flats",
+    category: "shoes",
+    price: 55000,
+    image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=700"
+  },
+
+  {
+    id: "tote",
+    name: "Everyday Canvas Tote",
+    category: "bags",
+    price: 35000,
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=700"
+  },
+
+  {
+    id: "shoulder",
+    name: "Classic Shoulder Bag",
+    category: "bags",
+    price: 89000,
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=700"
+  },
+
+  {
+    id: "handbag",
+    name: "Elegant Leather Handbag",
+    category: "bags",
+    price: 109000,
+    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=700"
+  },
+
+  {
+    id: "crossbody",
+    name: "Mini Crossbody Bag",
+    category: "bags",
+    price: 69000,
+    image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=700"
+  }
+
+];
+
+// Initial shopping cart
+// 1 dress + 1 pair of sneakers
+
+let cart = {
+  dress: 1,
+  sneakers: 1
 };
 
-let cart = {dress:1,sneakers:1};
-let currentVariant = 'A';
-let toastTimer;
-
-function money(value){
-  return value.toLocaleString('ko-KR')+'원';
+function formatPrice(price) {
+  return "₩" + price.toLocaleString("ko-KR");
 }
 
-function renderCart(){
-  const container=document.getElementById('cartItems');
-  let total=0;
-  let count=0;
-  container.innerHTML='';
+function renderProducts(category = "all") {
 
-  Object.keys(cart).forEach(function(id){
-    const quantity=cart[id];
-    const product=productsData[id];
-    if(!product || quantity<=0)return;
+  const grid = document.getElementById("product-grid");
 
-    total+=product.price*quantity;
-    count+=quantity;
+  const filtered = category === "all"
+    ? products
+    : products.filter(p => p.category === category);
 
-    const item=document.createElement('div');
-    item.className='cart-item';
-    item.innerHTML=`
-      <img class="cart-image" src="${product.image}" alt="${product.name}">
-      <div class="cart-info">
-        <h3>${product.name}</h3>
-        <p>${money(product.price)}</p>
+  grid.innerHTML = filtered.map(product => `
+
+    <div class="product-card">
+
+      <img src="${product.image}"
+           alt="${product.name}"
+           loading="lazy">
+
+      <div class="product-info">
+
+        <div class="product-category">
+          ${product.category.toUpperCase()}
+        </div>
+
+        <div class="product-name">
+          ${product.name}
+        </div>
+
+        <div class="price">
+          ${formatPrice(product.price)}
+        </div>
+
+        <button class="add-cart"
+          onclick="addToCart('${product.id}')">
+          ADD TO BAG
+        </button>
+
       </div>
-      <div class="quantity">
-        <button onclick="changeQuantity('${id}',-1)">−</button>
-        <span>${quantity}</span>
-        <button onclick="changeQuantity('${id}',1)">+</button>
-      </div>
-      <button class="remove" onclick="removeItem('${id}')">삭제</button>
-    `;
-    container.appendChild(item);
-  });
+    </div>
 
-  if(count===0){
-    container.textContent='장바구니가 비어 있습니다.';
+  `).join("");
+
+}
+
+function filterProducts(category, button) {
+
+  document.querySelectorAll(".filters button")
+    .forEach(btn => btn.classList.remove("active"));
+
+  button.classList.add("active");
+
+  renderProducts(category);
+}
+
+function addToCart(id) {
+
+  cart[id] = (cart[id] || 0) + 1;
+
+  updateCart();
+
+  openCart();
+}
+
+function updateQuantity(id, change) {
+
+  cart[id] = (cart[id] || 0) + change;
+
+  if (cart[id] <= 0) {
+    delete cart[id];
   }
 
-  document.getElementById('cartTotal').textContent=money(total);
-  document.getElementById('cartCount').textContent=count;
+  updateCart();
 }
 
-function addCart(id){
-  cart[id]=(cart[id]||0)+1;
-  renderCart();
-  notify('장바구니에 상품을 추가했습니다.');
-}
+function removeFromCart(id) {
 
-function changeQuantity(id,amount){
-  cart[id]=(cart[id]||0)+amount;
-  if(cart[id]<=0)delete cart[id];
-  renderCart();
-}
-
-function removeItem(id){
   delete cart[id];
-  renderCart();
-  notify('상품을 삭제했습니다.');
+
+  updateCart();
 }
 
-function filterProducts(category,button){
-  document.querySelectorAll('.categories button').forEach(function(btn){
-    btn.classList.remove('active');
+function updateCart() {
+
+  const cartItems = document.getElementById("cart-items");
+
+  let total = 0;
+  let count = 0;
+
+  let html = "";
+
+  Object.keys(cart).forEach(id => {
+
+    const product = products.find(p => p.id === id);
+
+    if (!product) return;
+
+    const quantity = cart[id];
+
+    const subtotal = product.price * quantity;
+
+    total += subtotal;
+    count += quantity;
+
+    html += `
+
+      <div class="cart-item">
+
+        <img src="${product.image}" alt="${product.name}">
+
+        <div class="cart-details">
+
+          <h4>${product.name}</h4>
+
+          <p>${formatPrice(product.price)}</p>
+
+          <div class="quantity">
+
+            <button onclick="updateQuantity('${id}',-1)">−</button>
+
+            <span>${quantity}</span>
+
+            <button onclick="updateQuantity('${id}',1)">+</button>
+
+          </div>
+
+          <button class="remove-item"
+            onclick="removeFromCart('${id}')">
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
   });
-  button.classList.add('active');
 
-  document.querySelectorAll('.product').forEach(function(product){
-    product.style.display=(category==='all'||product.dataset.category===category)?'':'none';
-  });
-}
-
-function goToCart(){
-  document.getElementById('cart').scrollIntoView({behavior:'smooth'});
-}
-
-function notify(message){
-  const toast=document.getElementById('toast');
-  toast.textContent=message;
-  toast.style.display='block';
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(function(){
-    toast.style.display='none';
-  },2200);
-}
-
-function showPopup(variant){
-  currentVariant=variant;
-  document.getElementById('btnA').classList.toggle('active',variant==='A');
-  document.getElementById('btnB').classList.toggle('active',variant==='B');
-
-  if(variant==='A'){
-    document.getElementById('popupIcon').textContent='🎁';
-    document.getElementById('popupTitle').textContent='10,000원 할인 쿠폰!';
-    document.getElementById('popupDescription').innerHTML=
-      '지금 쿠폰을 받아보세요!<br><br>'+
-      '<span class="highlight">10,000원 할인 쿠폰</span>을 드립니다.<br>'+
-      '쿠폰은 발급 후 7일간 사용할 수 있습니다.';
-    document.getElementById('popupButton').textContent='쿠폰 받기';
-  }else{
-    document.getElementById('popupIcon').textContent='✨';
-    document.getElementById('popupTitle').textContent='오늘만 특별 할인!';
-    document.getElementById('popupDescription').innerHTML=
-      '오늘 하루 특별한 혜택을 만나보세요!<br><br>'+
-      '<span class="highlight">현재 보고 있는 상품과<br>'+
-      '장바구니에 담긴 상품 모두 10% 할인!</span><br><br>'+
-      '오늘만 적용되는 특별 할인입니다.';
-    document.getElementById('popupButton').textContent='10% 할인 받기';
+  if (count === 0) {
+    html = '<div class="empty-cart">Your shopping bag is empty.</div>';
   }
 
-  document.getElementById('popupOverlay').style.display='flex';
+  cartItems.innerHTML = html;
+
+  document.getElementById("cart-count").textContent = count;
+
+  document.getElementById("cart-total").textContent =
+    formatPrice(total);
+
 }
 
-function closePopup(){
-  document.getElementById('popupOverlay').style.display='none';
+function openCart() {
+
+  document.getElementById("cart-panel")
+    .classList.add("show");
+
+  document.getElementById("cart-overlay")
+    .classList.add("show");
+
 }
 
-function popupAction(){
-  if(currentVariant==='A'){
-    notify('10,000원 할인 쿠폰을 받았습니다!');
-  }else{
-    notify('현재 상품과 장바구니 상품에 10% 할인이 적용됩니다!');
+function closeCart() {
+
+  document.getElementById("cart-panel")
+    .classList.remove("show");
+
+  document.getElementById("cart-overlay")
+    .classList.remove("show");
+
+}
+
+function checkout() {
+
+  if (Object.keys(cart).length === 0) {
+    alert("Your shopping bag is empty!");
+    return;
   }
-  closePopup();
+
+  alert("Thank you for shopping with HANSUNG FASHION!");
+
 }
 
-renderCart();
-showPopup('A');
+// Initial rendering
+
+renderProducts();
+updateCart();
+
 </script>
 
 </body>
