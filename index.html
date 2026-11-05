@@ -7,431 +7,421 @@
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #fffaf8;
-  color: #554d4a;
+    font-family: Arial, sans-serif;
+    background: #fffaf8;
+    color: #554d4a;
 }
 
 header {
-  background: white;
-  padding: 22px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  border-bottom: 1px solid #f1e7e3;
+    background: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid #eee4e0;
 }
 
 .logo {
-  color: #b98285;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 2px;
+    color: #bd8588;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 nav {
-  display: flex;
-  gap: 25px;
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
-  text-decoration: none;
-  color: #625957;
-  font-size: 14px;
+    text-decoration: none;
+    color: #625957;
+    font-size: 14px;
 }
 
 .cart-button {
-  border: none;
-  background: #f5e5e2;
-  color: #805e5e;
-  padding: 11px 17px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
+    border: none;
+    background: #f4e5e2;
+    color: #805e5e;
+    padding: 11px 17px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 .hero {
-  width: 86%;
-  margin: 30px auto;
-  min-height: 300px;
-  border-radius: 20px;
-  background: linear-gradient(120deg, #f6e1df, #eee8e1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 45px 7%;
-  overflow: hidden;
+    width: 88%;
+    margin: 30px auto;
+    min-height: 270px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #f6e1df, #eee8e1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 7%;
 }
 
 .hero h1 {
-  color: #916a6b;
-  font-size: 40px;
-  margin-bottom: 15px;
+    color: #916a6b;
+    font-size: 38px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-  color: #796b68;
-  line-height: 1.9;
+    line-height: 1.8;
+    color: #796b68;
 }
 
 .hero-visual {
-  font-size: 100px;
+    font-size: 85px;
 }
 
 .hero-tag {
-  display: inline-block;
-  margin-top: 20px;
-  background: white;
-  color: #a77779;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 13px;
+    display: inline-block;
+    margin-top: 18px;
+    padding: 9px 18px;
+    background: white;
+    border-radius: 20px;
+    color: #a77779;
+    font-size: 13px;
 }
 
 .section {
-  width: 86%;
-  margin: 45px auto;
+    width: 88%;
+    margin: 45px auto;
 }
 
 .section-title {
-  color: #705c58;
-  font-size: 25px;
-  margin-bottom: 22px;
+    color: #705c58;
+    font-size: 24px;
+    margin-bottom: 22px;
 }
 
 .categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 .categories button {
-  border: none;
-  background: #f4e9e6;
-  color: #765e5b;
-  padding: 10px 19px;
-  border-radius: 20px;
-  cursor: pointer;
+    border: none;
+    background: #f4e9e6;
+    color: #765e5b;
+    padding: 10px 19px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .categories button.active {
-  background: #bd898b;
-  color: white;
+    background: #bd898b;
+    color: white;
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .product {
-  background: white;
-  padding: 13px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(100, 70, 60, .06);
-  transition: .2s;
-}
-
-.product:hover {
-  transform: translateY(-4px);
+    background: white;
+    padding: 13px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(100, 70, 60, 0.06);
 }
 
 .product-image {
-  height: 190px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 78px;
-  margin-bottom: 14px;
+    height: 175px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    margin-bottom: 13px;
 }
 
 .product h3 {
-  font-size: 15px;
-  margin-bottom: 8px;
+    font-size: 15px;
+    margin-bottom: 8px;
 }
 
-.product .price {
-  color: #b77d80;
-  font-weight: bold;
-  margin-bottom: 12px;
+.price {
+    color: #b77d80;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .product-actions {
-  display: flex;
-  gap: 7px;
+    display: flex;
+    gap: 7px;
 }
 
 .product-actions button {
-  flex: 1;
-  border: none;
-  background: #f5e9e6;
-  color: #765e5b;
-  padding: 10px 4px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 12px;
+    flex: 1;
+    border: none;
+    background: #f5e9e6;
+    color: #765e5b;
+    padding: 10px 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
 }
 
 .product-actions button:hover {
-  background: #e9ceca;
+    background: #e9ceca;
 }
 
 /* CART */
 .cart-section {
-  background: white;
-  padding: 25px;
-  border-radius: 17px;
-  box-shadow: 0 4px 15px rgba(100, 70, 60, .05);
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    box-shadow: 0 4px 15px rgba(100, 70, 60, 0.05);
 }
 
 .cart-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 15px 0;
-  border-bottom: 1px solid #f1e9e6;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1e9e6;
 }
 
 .cart-emoji {
-  width: 65px;
-  height: 65px;
-  background: #f8eeeb;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 35px;
-  flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: #f8eeeb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
 }
 
 .cart-info {
-  flex: 1;
+    flex: 1;
 }
 
 .cart-info h3 {
-  font-size: 14px;
-  margin-bottom: 7px;
+    font-size: 14px;
+    margin-bottom: 7px;
 }
 
 .cart-info p {
-  color: #b77d80;
-  font-weight: bold;
-  font-size: 14px;
+    color: #b77d80;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .quantity {
-  display: flex;
-  align-items: center;
-  gap: 9px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .quantity button {
-  width: 25px;
-  height: 25px;
-  border: none;
-  background: #f5e9e6;
-  border-radius: 50%;
-  cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #f5e9e6;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .remove {
-  border: none;
-  background: none;
-  color: #a58d89;
-  cursor: pointer;
-  font-size: 12px;
+    border: none;
+    background: none;
+    color: #a58d89;
+    cursor: pointer;
 }
 
 .cart-total {
-  text-align: right;
-  font-size: 19px;
-  font-weight: bold;
-  margin-top: 20px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .checkout {
-  display: block;
-  margin: 18px 0 0 auto;
-  border: none;
-  background: #bd898b;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  cursor: pointer;
+    display: block;
+    margin: 18px 0 0 auto;
+    border: none;
+    background: #bd898b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 /* A/B TEST */
 .ab-area {
-  width: 86%;
-  margin: 40px auto;
-  padding: 22px;
-  text-align: center;
-  background: white;
-  border: 1px solid #f0e3df;
-  border-radius: 15px;
+    width: 88%;
+    margin: 40px auto;
+    padding: 22px;
+    text-align: center;
+    background: white;
+    border: 1px solid #f0e3df;
+    border-radius: 15px;
 }
 
 .ab-area p {
-  margin-bottom: 12px;
-  font-size: 14px;
+    margin-bottom: 12px;
+    font-size: 14px;
 }
 
 .ab-controls {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
 .ab-controls button {
-  border: none;
-  background: #f4e9e6;
-  color: #765e5b;
-  padding: 10px 22px;
-  border-radius: 22px;
-  cursor: pointer;
+    border: none;
+    background: #f4e9e6;
+    color: #765e5b;
+    padding: 10px 22px;
+    border-radius: 22px;
+    cursor: pointer;
 }
 
 .ab-controls button.active {
-  background: #bd898b;
-  color: white;
+    background: #bd898b;
+    color: white;
 }
 
 footer {
-  text-align: center;
-  padding: 35px;
-  background: #f8eeeb;
-  color: #907c78;
-  font-size: 13px;
+    text-align: center;
+    padding: 30px;
+    background: #f8eeeb;
+    color: #907c78;
+    font-size: 13px;
 }
 
 /* POPUP */
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(50, 40, 40, .48);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  padding: 15px;
+    position: fixed;
+    inset: 0;
+    background: rgba(50, 40, 40, 0.48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 15px;
 }
 
 .popup {
-  width: 400px;
-  max-width: 100%;
-  background: #fffaf8;
-  border-radius: 22px;
-  padding: 35px 28px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 10px 40px rgba(0,0,0,.15);
+    width: 390px;
+    max-width: 100%;
+    background: #fffaf8;
+    border-radius: 22px;
+    padding: 35px 28px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .popup-icon {
-  font-size: 50px;
-  margin-bottom: 15px;
+    font-size: 48px;
+    margin-bottom: 15px;
 }
 
 .popup h2 {
-  color: #ad777b;
-  font-size: 25px;
-  margin-bottom: 15px;
+    color: #ad777b;
+    font-size: 25px;
+    margin-bottom: 15px;
 }
 
 .popup p {
-  color: #766967;
-  font-size: 14px;
-  line-height: 1.9;
-  margin-bottom: 15px;
+    color: #766967;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 15px;
 }
 
 .highlight {
-  color: #bd777b;
-  font-weight: bold;
+    color: #bd777b;
+    font-weight: bold;
 }
 
 .popup-button {
-  width: 100%;
-  background: #bd898b;
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 25px;
-  font-size: 15px;
-  cursor: pointer;
-  margin-top: 8px;
+    width: 100%;
+    background: #bd898b;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .close {
-  position: absolute;
-  right: 17px;
-  top: 13px;
-  border: none;
-  background: none;
-  font-size: 24px;
-  color: #9b8985;
-  cursor: pointer;
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #9b8985;
+    cursor: pointer;
 }
 
 .toast {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #765e5b;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 25px;
-  z-index: 200;
-  display: none;
-  font-size: 14px;
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #765e5b;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    z-index: 200;
+    display: none;
+    font-size: 14px;
 }
 
-@media(max-width: 850px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 850px) {
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  .hero h1 {
-    font-size: 30px;
-  }
+    .hero h1 {
+        font-size: 29px;
+    }
 }
 
-@media(max-width: 500px) {
-  header {
-    padding: 18px 5%;
-  }
+@media (max-width: 500px) {
+    header {
+        padding: 18px 5%;
+    }
 
-  nav {
-    order: 3;
-    width: 100%;
-  }
+    nav {
+        width: 100%;
+        order: 3;
+    }
 
-  .hero, .section, .ab-area {
-    width: 92%;
-  }
+    .hero, .section, .ab-area {
+        width: 92%;
+    }
 
-  .hero-visual {
-    font-size: 55px;
-  }
+    .hero-visual {
+        font-size: 45px;
+    }
 
-  .product-image {
-    height: 135px;
-  }
+    .product-image {
+        height: 125px;
+    }
 
-  .cart-section {
-    padding: 15px;
-  }
+    .cart-section {
+        padding: 12px;
+    }
 }
 </style>
 </head>
@@ -439,379 +429,390 @@ footer {
 <body>
 
 <header>
-  <div class="logo">HANSUNG FASHION</div>
+    <div class="logo">HANSUNG FASHION</div>
 
-  <nav>
-    <a href="#">HOME</a>
-    <a href="#products">SHOP</a>
-    <a href="#cart">CART</a>
-    <a href="#">ABOUT</a>
-  </nav>
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#products">SHOP</a>
+        <a href="#cart">CART</a>
+        <a href="#">ABOUT</a>
+    </nav>
 
-  <button class="cart-button" onclick="document.getElementById('cart').scrollIntoView({behavior:'smooth'})">
-    🛍 장바구니 (<span id="cartCount">2</span>)
-  </button>
+    <button class="cart-button" onclick="goToCart()">
+        🛍 장바구니 (<span id="cartCount">2</span>)
+    </button>
 </header>
 
-<!-- MAIN BANNER -->
 <section class="hero">
-  <div>
-    <h1>Find Your Daily Style</h1>
-    <p>
-      매일 입고 싶은 특별한 스타일<br>
-      HANSUNG FASHION에서 나만의 패션을 만나보세요.
-    </p>
-    <span class="hero-tag">NEW COLLECTION 2026</span>
-  </div>
-  <div class="hero-visual">👗 👜 👟</div>
+    <div>
+        <h1>Find Your Daily Style</h1>
+        <p>
+            매일 입고 싶은 특별한 스타일<br>
+            HANSUNG FASHION에서 나만의 패션을 만나보세요.
+        </p>
+        <span class="hero-tag">NEW COLLECTION 2026</span>
+    </div>
+    <div class="hero-visual">👗 👜 👟</div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="section" id="products">
-  <h2 class="section-title">NEW COLLECTION</h2>
+    <h2 class="section-title">NEW COLLECTION</h2>
 
-  <div class="categories">
-    <button class="active" onclick="filterProducts('all',this)">전체</button>
-    <button onclick="filterProducts('clothes',this)">의류</button>
-    <button onclick="filterProducts('shoes',this)">신발</button>
-    <button onclick="filterProducts('bags',this)">가방</button>
-  </div>
-
-  <div class="products">
-
-    <div class="product" data-category="clothes">
-      <div class="product-image" style="background:#f2e4df">👗</div>
-      <h3>플라워 원피스</h3>
-      <div class="price">45,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('dress')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
+    <div class="categories">
+        <button class="active" onclick="filterProducts('all', this)">전체</button>
+        <button onclick="filterProducts('clothes', this)">의류</button>
+        <button onclick="filterProducts('shoes', this)">신발</button>
+        <button onclick="filterProducts('bags', this)">가방</button>
     </div>
 
-    <div class="product" data-category="shoes">
-      <div class="product-image" style="background:#e9e7f1">👟</div>
-      <h3>데일리 스니커즈</h3>
-      <div class="price">59,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('sneakers')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+    <div class="products">
 
-    <div class="product" data-category="bags">
-      <div class="product-image" style="background:#f5e5d9">👜</div>
-      <h3>미니 숄더백</h3>
-      <div class="price">39,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('bag')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="clothes">
+            <div class="product-image" style="background:#f2e4df">👗</div>
+            <h3>플라워 원피스</h3>
+            <div class="price">45,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('dress')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="clothes">
-      <div class="product-image" style="background:#e8edf0">🧥</div>
-      <h3>베이직 가디건</h3>
-      <div class="price">35,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('cardigan')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="shoes">
+            <div class="product-image" style="background:#e9e7f1">👟</div>
+            <h3>데일리 스니커즈</h3>
+            <div class="price">59,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('sneakers')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="shoes">
-      <div class="product-image" style="background:#f0e9df">👠</div>
-      <h3>클래식 로퍼</h3>
-      <div class="price">49,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('loafers')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="bags">
+            <div class="product-image" style="background:#f5e5d9">👜</div>
+            <h3>미니 숄더백</h3>
+            <div class="price">39,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('bag')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="bags">
-      <div class="product-image" style="background:#e9e7e0">🎒</div>
-      <h3>데일리 백팩</h3>
-      <div class="price">52,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('backpack')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="clothes">
+            <div class="product-image" style="background:#e8edf0">🧥</div>
+            <h3>베이직 가디건</h3>
+            <div class="price">35,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('cardigan')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="clothes">
-      <div class="product-image" style="background:#f4e7ed">👚</div>
-      <h3>베이직 니트</h3>
-      <div class="price">32,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('knit')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="shoes">
+            <div class="product-image" style="background:#f0e9df">👠</div>
+            <h3>클래식 로퍼</h3>
+            <div class="price">49,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('loafers')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="shoes">
-      <div class="product-image" style="background:#e9e5dd">👞</div>
-      <h3>클래식 로우 슈즈</h3>
-      <div class="price">55,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('shoes')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="bags">
+            <div class="product-image" style="background:#e9e7e0">🎒</div>
+            <h3>데일리 백팩</h3>
+            <div class="price">52,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('backpack')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="bags">
-      <div class="product-image" style="background:#f1e4e2">👝</div>
-      <h3>스퀘어 토트백</h3>
-      <div class="price">48,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('tote')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="clothes">
+            <div class="product-image" style="background:#f4e7ed">👚</div>
+            <h3>베이직 니트</h3>
+            <div class="price">32,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('knit')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="clothes">
-      <div class="product-image" style="background:#e8e8f0">👖</div>
-      <h3>와이드 데님 팬츠</h3>
-      <div class="price">42,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('jeans')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="shoes">
+            <div class="product-image" style="background:#e9e5dd">👞</div>
+            <h3>클래식 로우 슈즈</h3>
+            <div class="price">55,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('shoes')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="shoes">
-      <div class="product-image" style="background:#f1e5dd">🥿</div>
-      <h3>데일리 플랫슈즈</h3>
-      <div class="price">43,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('flats')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="bags">
+            <div class="product-image" style="background:#f1e4e2">👝</div>
+            <h3>스퀘어 토트백</h3>
+            <div class="price">48,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('tote')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-    <div class="product" data-category="bags">
-      <div class="product-image" style="background:#e7ede8">🧳</div>
-      <h3>캐주얼 숄더백</h3>
-      <div class="price">46,000원</div>
-      <div class="product-actions">
-        <button onclick="addCart('shoulder')">장바구니</button>
-        <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
-      </div>
-    </div>
+        <div class="product" data-category="clothes">
+            <div class="product-image" style="background:#e8e8f0">👖</div>
+            <h3>와이드 데님 팬츠</h3>
+            <div class="price">42,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('jeans')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
 
-  </div>
+        <div class="product" data-category="shoes">
+            <div class="product-image" style="background:#f1e5dd">🥿</div>
+            <h3>데일리 플랫슈즈</h3>
+            <div class="price">43,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('flats')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
+
+        <div class="product" data-category="bags">
+            <div class="product-image" style="background:#e7ede8">👜</div>
+            <h3>캐주얼 숄더백</h3>
+            <div class="price">46,000원</div>
+            <div class="product-actions">
+                <button onclick="addCart('shoulder')">장바구니</button>
+                <button onclick="notify('관심 상품에 추가했습니다.')">♡ 찜하기</button>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<!-- SHOPPING CART -->
 <section class="section" id="cart">
-  <h2 class="section-title">🛒 장바구니</h2>
+    <h2 class="section-title">🛒 장바구니</h2>
 
-  <div class="cart-section">
-    <div id="cartItems"></div>
+    <div class="cart-section">
+        <div id="cartItems"></div>
 
-    <div class="cart-total">
-      총 상품 금액: <span id="cartTotal">98,000원</span>
+        <div class="cart-total">
+            총 상품 금액: <span id="cartTotal">104,000원</span>
+        </div>
+
+        <button class="checkout" onclick="notify('주문 기능은 테스트용입니다.')">
+            주문하기
+        </button>
     </div>
-
-    <button class="checkout" onclick="notify('주문 기능은 테스트용입니다.')">
-      주문하기
-    </button>
-  </div>
 </section>
 
-<!-- A/B TEST -->
 <div class="ab-area">
-  <p><strong>A/B TEST 미리보기</strong></p>
-  <p>팝업 유형을 선택하여 두 가지 프로모션을 비교해 보세요.</p>
+    <p><strong>A/B TEST 미리보기</strong></p>
+    <p>팝업 유형을 선택하여 두 가지 프로모션을 비교해 보세요.</p>
 
-  <div class="ab-controls">
-    <button id="btnA" class="active" onclick="showPopup('A')">A안 보기</button>
-    <button id="btnB" onclick="showPopup('B')">B안 보기</button>
-  </div>
+    <div class="ab-controls">
+        <button id="btnA" class="active" onclick="showPopup('A')">A안 보기</button>
+        <button id="btnB" onclick="showPopup('B')">B안 보기</button>
+    </div>
 </div>
 
 <footer>
-  HANSUNG FASHION © 2026. All Rights Reserved.
+    HANSUNG FASHION © 2026. All Rights Reserved.
 </footer>
 
 <div class="toast" id="toast"></div>
 
-<!-- PROMOTION POPUP -->
 <div class="overlay" id="popupOverlay">
-  <div class="popup">
-    <button class="close" onclick="closePopup()">×</button>
-    <div class="popup-icon" id="popupIcon">🎁</div>
-    <h2 id="popupTitle"></h2>
-    <p id="popupDescription"></p>
-    <button class="popup-button" id="popupButton" onclick="popupAction()"></button>
-  </div>
+    <div class="popup">
+        <button class="close" onclick="closePopup()">×</button>
+        <div class="popup-icon" id="popupIcon">🎁</div>
+        <h2 id="popupTitle"></h2>
+        <p id="popupDescription"></p>
+        <button class="popup-button" id="popupButton" onclick="popupAction()"></button>
+    </div>
 </div>
 
 <script>
-const products = {
-  dress: {name:'플라워 원피스', price:45000, emoji:'👗'},
-  sneakers: {name:'데일리 스니커즈', price:59000, emoji:'👟'},
-  bag: {name:'미니 숄더백', price:39000, emoji:'👜'},
-  cardigan: {name:'베이직 가디건', price:35000, emoji:'🧥'},
-  loafers: {name:'클래식 로퍼', price:49000, emoji:'👠'},
-  backpack: {name:'데일리 백팩', price:52000, emoji:'🎒'},
-  knit: {name:'베이직 니트', price:32000, emoji:'👚'},
-  shoes: {name:'클래식 로우 슈즈', price:55000, emoji:'👞'},
-  tote: {name:'스퀘어 토트백', price:48000, emoji:'👝'},
-  jeans: {name:'와이드 데님 팬츠', price:42000, emoji:'👖'},
-  flats: {name:'데일리 플랫슈즈', price:43000, emoji:'🥿'},
-  shoulder: {name:'캐주얼 숄더백', price:46000, emoji:'👜'}
+const productsData = {
+    dress: {name: '플라워 원피스', price: 45000, emoji: '👗'},
+    sneakers: {name: '데일리 스니커즈', price: 59000, emoji: '👟'},
+    bag: {name: '미니 숄더백', price: 39000, emoji: '👜'},
+    cardigan: {name: '베이직 가디건', price: 35000, emoji: '🧥'},
+    loafers: {name: '클래식 로퍼', price: 49000, emoji: '👠'},
+    backpack: {name: '데일리 백팩', price: 52000, emoji: '🎒'},
+    knit: {name: '베이직 니트', price: 32000, emoji: '👚'},
+    shoes: {name: '클래식 로우 슈즈', price: 55000, emoji: '👞'},
+    tote: {name: '스퀘어 토트백', price: 48000, emoji: '👝'},
+    jeans: {name: '와이드 데님 팬츠', price: 42000, emoji: '👖'},
+    flats: {name: '데일리 플랫슈즈', price: 43000, emoji: '🥿'},
+    shoulder: {name: '캐주얼 숄더백', price: 46000, emoji: '👜'}
 };
 
-// 미리 담겨 있는 상품
+// 기본 장바구니 상품
 let cart = {
-  dress: 1,
-  sneakers: 1
+    dress: 1,
+    sneakers: 1
 };
 
 let currentVariant = 'A';
 
-function money(number) {
-  return number.toLocaleString('ko-KR') + '원';
+function money(value) {
+    return value.toLocaleString('ko-KR') + '원';
 }
 
 function renderCart() {
-  const cartItems = document.getElementById('cartItems');
-  let total = 0;
-  let count = 0;
+    const container = document.getElementById('cartItems');
+    let total = 0;
+    let count = 0;
 
-  cartItems.innerHTML = '';
+    container.innerHTML = '';
 
-  Object.keys(cart).forEach(id => {
-    const quantity = cart[id];
-    if (quantity <= 0) return;
+    for (const id in cart) {
+        const quantity = cart[id];
+        const product = productsData[id];
 
-    const product = products[id];
-    const subtotal = product.price * quantity;
+        if (!product || quantity <= 0) continue;
 
-    total += subtotal;
-    count += quantity;
+        total += product.price * quantity;
+        count += quantity;
 
-    cartItems.innerHTML += `
-      <div class="cart-item">
-        <div class="cart-emoji">${product.emoji}</div>
-        <div class="cart-info">
-          <h3>${product.name}</h3>
-          <p>${money(product.price)}</p>
-        </div>
-        <div class="quantity">
-          <button onclick="changeQuantity('${id}', -1)">−</button>
-          <span>${quantity}</span>
-          <button onclick="changeQuantity('${id}', 1)">+</button>
-        </div>
-        <button class="remove" onclick="removeItem('${id}')">삭제</button>
-      </div>
-    `;
-  });
+        const item = document.createElement('div');
+        item.className = 'cart-item';
 
-  if (count === 0) {
-    cartItems.innerHTML = '<p>장바구니가 비어 있습니다.</p>';
-  }
+        item.innerHTML = `
+            <div class="cart-emoji">${product.emoji}</div>
+            <div class="cart-info">
+                <h3>${product.name}</h3>
+                <p>${money(product.price)}</p>
+            </div>
+            <div class="quantity">
+                <button onclick="changeQuantity('${id}', -1)">−</button>
+                <span>${quantity}</span>
+                <button onclick="changeQuantity('${id}', 1)">+</button>
+            </div>
+            <button class="remove" onclick="removeItem('${id}')">삭제</button>
+        `;
 
-  document.getElementById('cartTotal').textContent = money(total);
-  document.getElementById('cartCount').textContent = count;
+        container.appendChild(item);
+    }
+
+    if (count === 0) {
+        container.textContent = '장바구니가 비어 있습니다.';
+    }
+
+    document.getElementById('cartTotal').textContent = money(total);
+    document.getElementById('cartCount').textContent = count;
 }
 
 function addCart(id) {
-  cart[id] = (cart[id] || 0) + 1;
-  renderCart();
-  notify('장바구니에 상품을 추가했습니다.');
+    cart[id] = (cart[id] || 0) + 1;
+    renderCart();
+    notify('장바구니에 상품을 추가했습니다.');
 }
 
 function changeQuantity(id, amount) {
-  cart[id] = (cart[id] || 0) + amount;
+    cart[id] = (cart[id] || 0) + amount;
 
-  if (cart[id] <= 0) {
-    delete cart[id];
-  }
+    if (cart[id] <= 0) {
+        delete cart[id];
+    }
 
-  renderCart();
+    renderCart();
 }
 
 function removeItem(id) {
-  delete cart[id];
-  renderCart();
-  notify('상품을 장바구니에서 삭제했습니다.');
+    delete cart[id];
+    renderCart();
+    notify('상품을 삭제했습니다.');
 }
 
 function filterProducts(category, button) {
-  document.querySelectorAll('.categories button').forEach(btn => {
-    btn.classList.remove('active');
-  });
+    document.querySelectorAll('.categories button').forEach(function(btn) {
+        btn.classList.remove('active');
+    });
 
-  button.classList.add('active');
+    button.classList.add('active');
 
-  document.querySelectorAll('.product').forEach(product => {
-    product.style.display =
-      category === 'all' || product.dataset.category === category
-        ? 'block'
-        : 'none';
-  });
+    document.querySelectorAll('.product').forEach(function(product) {
+        if (category === 'all' || product.dataset.category === category) {
+            product.style.display = '';
+        } else {
+            product.style.display = 'none';
+        }
+    });
 }
 
-function notify(message) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.style.display = 'block';
+function goToCart() {
+    document.getElementById('cart').scrollIntoView({behavior: 'smooth'});
+}
 
-  setTimeout(() => {
-    toast.style.display = 'none';
-  }, 2200);
+let toastTimer;
+
+function notify(message) {
+    const toast = document.getElementById('toast');
+
+    toast.textContent = message;
+    toast.style.display = 'block';
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(function() {
+        toast.style.display = 'none';
+    }, 2200);
 }
 
 function showPopup(variant) {
-  currentVariant = variant;
+    currentVariant = variant;
 
-  document.getElementById('btnA').classList.toggle('active', variant === 'A');
-  document.getElementById('btnB').classList.toggle('active', variant === 'B');
+    document.getElementById('btnA').classList.toggle('active', variant === 'A');
+    document.getElementById('btnB').classList.toggle('active', variant === 'B');
 
-  const icon = document.getElementById('popupIcon');
-  const title = document.getElementById('popupTitle');
-  const description = document.getElementById('popupDescription');
-  const button = document.getElementById('popupButton');
+    const icon = document.getElementById('popupIcon');
+    const title = document.getElementById('popupTitle');
+    const description = document.getElementById('popupDescription');
+    const button = document.getElementById('popupButton');
 
-  if (variant === 'A') {
-    icon.textContent = '🎁';
-    title.textContent = '10,000원 할인 쿠폰!';
-    description.innerHTML =
-      '지금 쿠폰을 받아보세요!<br><br>' +
-      '<span class="highlight">10,000원 할인 쿠폰</span>을 드립니다.<br>' +
-      '쿠폰은 발급 후 7일간 사용할 수 있습니다.';
-    button.textContent = '쿠폰 받기';
-  } else {
-    icon.textContent = '✨';
-    title.textContent = '오늘만 특별 할인!';
-    description.innerHTML =
-      '오늘 하루 특별한 혜택을 만나보세요!<br><br>' +
-      '<span class="highlight">현재 보고 있는 상품과<br>' +
-      '장바구니에 담긴 상품 모두 10% 할인!</span><br><br>' +
-      '오늘만 적용되는 특별 할인입니다.';
-    button.textContent = '10% 할인 받기';
-  }
+    if (variant === 'A') {
+        icon.textContent = '🎁';
+        title.textContent = '10,000원 할인 쿠폰!';
 
-  document.getElementById('popupOverlay').style.display = 'flex';
+        description.innerHTML =
+            '지금 쿠폰을 받아보세요!<br><br>' +
+            '<span class="highlight">10,000원 할인 쿠폰</span>을 드립니다.<br>' +
+            '쿠폰은 발급 후 7일간 사용할 수 있습니다.';
+
+        button.textContent = '쿠폰 받기';
+    } else {
+        icon.textContent = '✨';
+        title.textContent = '오늘만 특별 할인!';
+
+        description.innerHTML =
+            '오늘 하루 특별한 혜택을 만나보세요!<br><br>' +
+            '<span class="highlight">현재 보고 있는 상품과<br>' +
+            '장바구니에 담긴 상품 모두 10% 할인!</span><br><br>' +
+            '오늘만 적용되는 특별 할인입니다.';
+
+        button.textContent = '10% 할인 받기';
+    }
+
+    document.getElementById('popupOverlay').style.display = 'flex';
 }
 
 function closePopup() {
-  document.getElementById('popupOverlay').style.display = 'none';
+    document.getElementById('popupOverlay').style.display = 'none';
 }
 
 function popupAction() {
-  if (currentVariant === 'A') {
-    notify('10,000원 할인 쿠폰을 받았습니다!');
-  } else {
-    notify('현재 상품과 장바구니 상품에 10% 할인이 적용됩니다!');
-  }
+    if (currentVariant === 'A') {
+        notify('10,000원 할인 쿠폰을 받았습니다!');
+    } else {
+        notify('현재 상품과 장바구니 상품에 10% 할인이 적용됩니다!');
+    }
 
-  closePopup();
+    closePopup();
 }
 
-// Khởi tạo giỏ hàng và popup A
+// Khởi tạo website
 renderCart();
 showPopup('A');
 </script>
