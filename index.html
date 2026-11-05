@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background: #fff;
+  background: white;
   padding: 20px 7%;
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #b47c65;
+  color: #b28b75;
 }
 
 .cart-button {
@@ -63,9 +63,9 @@ nav a:hover {
 }
 
 .hero {
-  min-height: 500px;
+  min-height: 520px;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.38), rgba(0,0,0,.03)),
+    linear-gradient(90deg, rgba(0,0,0,.38), rgba(0,0,0,.02)),
     url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1800")
     center 35% / cover;
   display: flex;
@@ -75,7 +75,7 @@ nav a:hover {
 }
 
 .hero-content h1 {
-  font-size: 54px;
+  font-size: 55px;
   letter-spacing: 3px;
   line-height: 1.15;
   margin-bottom: 18px;
@@ -97,7 +97,7 @@ nav a:hover {
 }
 
 .hero-content button:hover {
-  background: #e9dcd4;
+  background: #e8dcd3;
 }
 
 .section {
@@ -149,7 +149,7 @@ nav a:hover {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px 18px;
+  gap: 32px 18px;
 }
 
 .product-card {
@@ -160,11 +160,12 @@ nav a:hover {
 .product-image {
   overflow: hidden;
   background: #eee;
+  position: relative;
 }
 
 .product-card img {
   width: 100%;
-  height: 310px;
+  height: 320px;
   object-fit: cover;
   display: block;
   transition: transform .4s;
@@ -239,6 +240,8 @@ footer {
   font-size: 12px;
   line-height: 2;
 }
+
+/* SHOPPING CART */
 
 .cart-overlay {
   position: fixed;
@@ -421,6 +424,8 @@ footer {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
   <div class="logo">HANSUNG FASHION</div>
@@ -437,9 +442,12 @@ footer {
 
 </header>
 
+<!-- HERO BANNER -->
+
 <section class="hero" id="home">
 
   <div class="hero-content">
+
     <h1>NEW SEASON<br>NEW STYLE</h1>
 
     <p>Discover your own style with Hansung Fashion.</p>
@@ -447,9 +455,12 @@ footer {
     <button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
       SHOP NOW
     </button>
+
   </div>
 
 </section>
+
+<!-- PRODUCT COLLECTION -->
 
 <section class="section" id="collection">
 
@@ -459,15 +470,29 @@ footer {
   </div>
 
   <div class="filters">
-    <button class="active" onclick="filterProducts('all',this)">ALL</button>
-    <button onclick="filterProducts('clothing',this)">CLOTHING</button>
-    <button onclick="filterProducts('shoes',this)">SHOES</button>
-    <button onclick="filterProducts('bags',this)">BAGS</button>
+
+    <button class="active"
+      onclick="filterProducts('all',this)">ALL</button>
+
+    <button onclick="filterProducts('clothing',this)">
+      CLOTHING
+    </button>
+
+    <button onclick="filterProducts('shoes',this)">
+      SHOES
+    </button>
+
+    <button onclick="filterProducts('bags',this)">
+      BAGS
+    </button>
+
   </div>
 
   <div class="product-grid" id="product-grid"></div>
 
 </section>
+
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
@@ -482,6 +507,8 @@ footer {
   </p>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
   <strong>HANSUNG FASHION</strong>
@@ -523,13 +550,17 @@ footer {
 
 <script>
 
+// ==================================
 // PRODUCT DATA
+// ==================================
 
 const products = [
 
+  // CLOTHING - 4 PRODUCTS
+
   {
     id: "dress",
-    name: "Casual Mini Dress",
+    name: "Korean Casual Mini Dress",
     category: "clothing",
     price: 59000,
     image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=700"
@@ -537,7 +568,7 @@ const products = [
 
   {
     id: "shirt",
-    name: "Oversized Casual Shirt",
+    name: "Oversized Street Shirt",
     category: "clothing",
     price: 39000,
     image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700"
@@ -545,7 +576,7 @@ const products = [
 
   {
     id: "jacket",
-    name: "Street Denim Jacket",
+    name: "Vintage Denim Jacket",
     category: "clothing",
     price: 79000,
     image: "https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=700"
@@ -559,9 +590,11 @@ const products = [
     image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=700"
   },
 
+  // SHOES - 4 PRODUCTS
+
   {
     id: "sneakers",
-    name: "Retro Street Sneakers",
+    name: "Korean Retro Sneakers",
     category: "shoes",
     price: 69000,
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700"
@@ -569,7 +602,7 @@ const products = [
 
   {
     id: "heels",
-    name: "Sporty Casual Shoes",
+    name: "Daily Casual Shoes",
     category: "shoes",
     price: 85000,
     image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=700"
@@ -577,7 +610,7 @@ const products = [
 
   {
     id: "boots",
-    name: "Urban Ankle Boots",
+    name: "Street Style Ankle Boots",
     category: "shoes",
     price: 99000,
     image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=700"
@@ -585,15 +618,17 @@ const products = [
 
   {
     id: "flats",
-    name: "Daily Casual Flats",
+    name: "Minimal Daily Flats",
     category: "shoes",
     price: 55000,
     image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=700"
   },
 
+  // BAGS - 4 PRODUCTS
+
   {
     id: "tote",
-    name: "Daily Canvas Tote",
+    name: "Casual Canvas Tote Bag",
     category: "bags",
     price: 35000,
     image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=700"
@@ -601,7 +636,7 @@ const products = [
 
   {
     id: "shoulder",
-    name: "Trendy Shoulder Bag",
+    name: "Korean Shoulder Bag",
     category: "bags",
     price: 89000,
     image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=700"
@@ -609,7 +644,7 @@ const products = [
 
   {
     id: "handbag",
-    name: "Modern Mini Handbag",
+    name: "Trendy Mini Handbag",
     category: "bags",
     price: 109000,
     image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=700"
@@ -617,7 +652,7 @@ const products = [
 
   {
     id: "crossbody",
-    name: "Everyday Crossbody Bag",
+    name: "Street Crossbody Bag",
     category: "bags",
     price: 69000,
     image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=700"
@@ -625,21 +660,28 @@ const products = [
 
 ];
 
-// INITIAL CART
-// One dress and one pair of sneakers
+// ==================================
+// INITIAL SHOPPING CART
+// ==================================
+
+// 1 dress + 1 pair of sneakers
 
 let cart = {
   dress: 1,
   sneakers: 1
 };
 
+// ==================================
 // FORMAT PRICE
+// ==================================
 
 function formatPrice(price) {
   return "₩" + price.toLocaleString("ko-KR");
 }
 
+// ==================================
 // DISPLAY PRODUCTS
+// ==================================
 
 function renderProducts(category = "all") {
 
@@ -654,11 +696,13 @@ function renderProducts(category = "all") {
     <div class="product-card">
 
       <div class="product-image">
+
         <img
           src="${product.image}"
           alt="${product.name}"
           loading="lazy"
         >
+
       </div>
 
       <div class="product-info">
@@ -689,7 +733,9 @@ function renderProducts(category = "all") {
 
 }
 
+// ==================================
 // FILTER PRODUCTS
+// ==================================
 
 function filterProducts(category, button) {
 
@@ -701,7 +747,9 @@ function filterProducts(category, button) {
   renderProducts(category);
 }
 
+// ==================================
 // ADD TO CART
+// ==================================
 
 function addToCart(id) {
 
@@ -712,7 +760,9 @@ function addToCart(id) {
   openCart();
 }
 
+// ==================================
 // CHANGE QUANTITY
+// ==================================
 
 function updateQuantity(id, change) {
 
@@ -725,7 +775,9 @@ function updateQuantity(id, change) {
   updateCart();
 }
 
+// ==================================
 // REMOVE PRODUCT
+// ==================================
 
 function removeFromCart(id) {
 
@@ -734,7 +786,9 @@ function removeFromCart(id) {
   updateCart();
 }
 
-// UPDATE CART
+// ==================================
+// UPDATE SHOPPING CART
+// ==================================
 
 function updateCart() {
 
@@ -771,11 +825,15 @@ function updateCart() {
 
           <div class="quantity">
 
-            <button onclick="updateQuantity('${id}',-1)">−</button>
+            <button onclick="updateQuantity('${id}',-1)">
+              −
+            </button>
 
             <span>${quantity}</span>
 
-            <button onclick="updateQuantity('${id}',1)">+</button>
+            <button onclick="updateQuantity('${id}',1)">
+              +
+            </button>
 
           </div>
 
@@ -794,7 +852,13 @@ function updateCart() {
   });
 
   if (count === 0) {
-    html = '<div class="empty-cart">Your shopping bag is empty.</div>';
+
+    html = `
+      <div class="empty-cart">
+        Your shopping bag is empty.
+      </div>
+    `;
+
   }
 
   cartItems.innerHTML = html;
@@ -806,7 +870,9 @@ function updateCart() {
 
 }
 
+// ==================================
 // OPEN CART
+// ==================================
 
 function openCart() {
 
@@ -818,7 +884,9 @@ function openCart() {
 
 }
 
+// ==================================
 // CLOSE CART
+// ==================================
 
 function closeCart() {
 
@@ -830,22 +898,30 @@ function closeCart() {
 
 }
 
+// ==================================
 // CHECKOUT
+// ==================================
 
 function checkout() {
 
   if (Object.keys(cart).length === 0) {
+
     alert("Your shopping bag is empty!");
+
     return;
+
   }
 
   alert("Thank you for shopping with HANSUNG FASHION!");
 
 }
 
+// ==================================
 // INITIALIZE WEBSITE
+// ==================================
 
 renderProducts();
+
 updateCart();
 
 </script>
